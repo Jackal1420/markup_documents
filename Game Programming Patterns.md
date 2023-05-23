@@ -326,7 +326,7 @@ Prototypes are a bit of an older pattern and can make code more cluttered and ha
 ```
 
 ### 5.) **Singleton**
-Singletons are a singular object that can be referenced from anywhere. They are a larger cousin of global variables and should be avoided like global variables because they turn our code into a ball of mud much faster. There are reasons to use singletons (i.e. if you want to provide access to an external api, my current employer uses a singleton to provide feature flags from LaunchDarkly's api), but it's generally something you will want to avoid.
+Singletons are a singular object that can be referenced from anywhere. They are a larger cousin of global variables and should be avoided like global variables because they turn our code into a ball of mud much faster. There are reasons to use singletons (i.e. if you want to provide access to an external api), but it's generally something you will want to avoid.
 
 Singletons are bad for these reasons 
 - They are GOBAL and make it harder to track down problems (e.g. if you trying to diagnose a problem involving a singleton, you have to look into all code that accesses it)
