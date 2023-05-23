@@ -51,13 +51,13 @@ interface Command {
 }
 
 class JumpCommand : Command() {
-	override fun execute(){
+    override fun execute(){
         jump()
     }    
 }
 
 class FireCommand : Command() {
-	override fun execute(){
+    override fun execute(){
         fire()
     }    
 }
@@ -69,7 +69,7 @@ Instead of calling game actions directly from the input handler, we can now pass
 class InputHandler(
     var buttonX: Command = JumpCommand(),
     var buttonY: Command = FireCommand(),
-   	var buttonA: Command = SprintCommand(),
+    var buttonA: Command = SprintCommand(),
     var buttonB: Command = CrouchCommand()
 ){  
     fun handleInput(button: ButtonType){
@@ -97,7 +97,7 @@ interface Command {
 }
 
 class JumpCommand : Command() {
-	override fun execute(actor: GameActor){
+    override fun execute(actor: GameActor){
         actor.jump()
     }    
 }
@@ -107,7 +107,7 @@ Now, instead of directly executing the `commands`, we can get a lot more bang fo
 class InputHandler(
     var buttonX: Command = JumpCommand(),
     var buttonY: Command = FireCommand(),
-   	var buttonA: Command = SprintCommand(),
+    var buttonA: Command = SprintCommand(),
     var buttonB: Command = CrouchCommand()
 ){  
     fun handleInput(button: ButtonType): Command?{
