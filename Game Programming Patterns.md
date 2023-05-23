@@ -125,9 +125,10 @@ class InputHandler(
 Now we are able to delay when the `command` is actually executed, and this allows us to do a lot more with our game control `commands`: 
 
 ```kt
-val command = inputHandler.handleInput() // returns an action we can perform based on button presses 
+val command = inputHandler.handleInput(inputButton) // returns an action we can perform based on button presses 
 
 if (command != null){
+    commandHistory.add(command)
     command.execute(actor)
 }
 ```
